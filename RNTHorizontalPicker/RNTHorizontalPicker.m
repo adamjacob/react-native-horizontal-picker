@@ -7,7 +7,7 @@
 //
 
 #import "RNTHorizontalPicker.h"
-#import "RCTConvert.h"
+#import <React/RCTConvert.h>
 #import "AKPickerView.h"
 #import <React/RCTComponent.h>
 
@@ -30,11 +30,11 @@
   self.pickerView.dataSource = self;
   self.pickerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
   [self addSubview:self.pickerView];
-  
+
   self.pickerView.font = [UIFont fontWithName:@"SFUIDisplay-Medium" size:16];
   self.pickerView.highlightedFont = [UIFont fontWithName:@"SFUIDisplay-Medium" size:16];
-  self.pickerView.textColor = [RCTConvert UIColor:itemColor];
-  self.pickerView.highlightedTextColor = [RCTConvert UIColor:selectedColor];
+  self.pickerView.textColor = [RCTConvert UIColor:self.itemColor];
+  self.pickerView.highlightedTextColor = [RCTConvert UIColor:self.selectedColor];
   self.pickerView.interitemSpacing = 15;
   self.pickerView.pickerViewStyle = AKPickerViewStyleFlat;
   return self;
@@ -48,6 +48,15 @@
   [_pickerView reloadData];
 }
 
+- (void)setItemColor:(NSNumber *)itemColor
+{
+    self.pickerView.textColor = [RCTConvert UIColor:itemColor];
+}
+
+- (void)setSelectedColor:(NSNumber *)selectedColor
+{
+    self.pickerView.highlightedTextColor = [RCTConvert UIColor:selectedColor];
+}
 
 - (NSUInteger)numberOfItemsInPickerView:(AKPickerView *)pickerView
 {
