@@ -1,11 +1,13 @@
 import React, { Component, PropTypes } from 'react';
-import { requireNativeComponent, Event } from 'react-native';
+import { requireNativeComponent, Event, processColor } from 'react-native';
 import _ from 'lodash';
 
 const RNTHorizontalPicker = requireNativeComponent('RNTHorizontalPicker', {
   propTypes: {
     titles: PropTypes.array,
-    selectedIndex: PropTypes.number
+    selectedIndex: PropTypes.number,
+    itemColor: PropTypes.string,
+    selectedColor:PropTypes.string
   }
 }, {
   nativeOnly: {
@@ -29,13 +31,17 @@ export default class HorizontalPicker extends Component {
       onChange,
       selectedIndex,
       style,
-      titles
+      titles,
+      itemColor,
+      selectedColor
     } = this.props;
     return (
       <RNTHorizontalPicker
         selectedIndex={selectedIndex || 0}
         style={style}
         titles={this.convertToString(titles)}
+        itemColor={processColor(itemColor)}
+        selectedColor={processColor(selectedColor)}
         onChange={onChange}
       />
     );

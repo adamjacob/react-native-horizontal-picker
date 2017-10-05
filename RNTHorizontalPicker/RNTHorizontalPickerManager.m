@@ -20,6 +20,8 @@ RCT_EXPORT_VIEW_PROPERTY(titles, NSArray)
 RCT_EXPORT_VIEW_PROPERTY(onChange, RCTBubblingEventBlock)
 RCT_EXPORT_VIEW_PROPERTY(selectedIndex, NSInteger)
 RCT_EXPORT_VIEW_PROPERTY(fontSize, NSInteger)
+RCT_EXPORT_VIEW_PROPERTY(itemColor, NSNumber)
+RCT_EXPORT_VIEW_PROPERTY(selectedColor, NSNumber)
 
 
 - (UIView *)view

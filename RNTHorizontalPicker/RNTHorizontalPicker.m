@@ -7,7 +7,7 @@
 //
 
 #import "RNTHorizontalPicker.h"
-
+#import "RCTConvert.h"
 #import "AKPickerView.h"
 #import <React/RCTComponent.h>
 
@@ -16,6 +16,8 @@
 @property (nonatomic, strong) NSMutableArray *titles;
 @property (nonatomic, copy) RCTBubblingEventBlock onChange;
 @property (nonatomic, assign) NSInteger selectedIndex;
+@property (nonatomic, assign) NSNumber *itemColor;
+@property (nonatomic, assign) NSNumber *selectedColor;
 @end
 
 @implementation RNTHorizontalPicker
@@ -31,6 +33,8 @@
   
   self.pickerView.font = [UIFont fontWithName:@"SFUIDisplay-Medium" size:16];
   self.pickerView.highlightedFont = [UIFont fontWithName:@"SFUIDisplay-Medium" size:16];
+  self.pickerView.textColor = [RCTConvert UIColor:itemColor];
+  self.pickerView.highlightedTextColor = [RCTConvert UIColor:selectedColor];
   self.pickerView.interitemSpacing = 15;
   self.pickerView.pickerViewStyle = AKPickerViewStyleFlat;
   return self;
