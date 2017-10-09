@@ -2,6 +2,8 @@
 
 <img src="./Screenshot.png" width="200" alt="Screenshot" />
 
+This is a fork of https://github.com/vineetha2438/react-native-horizontal-picker with added support for itemColor and selectedColor.
+
 ## Add it to your project
 
 You can try linking the project automatically:
@@ -37,6 +39,8 @@ Then:
   style={{ width: 150, height: 100, marginBottom: 4 }} //styles usually given to View component
   titles={[1, 2, 3, 4]} //can be an array of numbers or strings
   onChange={(event: Event) => { console.log('index of selected value', event.nativeEvent.newIndex); }}
+  selectedColor={'rgb(0,0,0)'}
+  itemColor={'rgb(155,155,155)'}
 />
 ```
 
