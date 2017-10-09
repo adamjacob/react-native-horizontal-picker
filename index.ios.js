@@ -48,8 +48,8 @@ HorizontalPicker.propTypes = {
   selectedIndex: React.PropTypes.number,
   style: React.PropTypes.object,
   titles: React.PropTypes.array.isRequired,
-  itemColor: React.PropTypes.number,
-  selectedColor: React.PropTypes.number
+  itemColor: React.PropTypes.string,
+  selectedColor: React.PropTypes.string
 };
 
 const RNTHorizontalPicker = requireNativeComponent('RNTHorizontalPicker', HorizontalPicker);
